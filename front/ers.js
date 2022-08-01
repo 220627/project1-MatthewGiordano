@@ -1,4 +1,4 @@
-const url = "http://localhost:5500"
+const url = "http://localhost:3000"
 
 document.getElementById("getReimbButton").onclick = getReimbursements
 

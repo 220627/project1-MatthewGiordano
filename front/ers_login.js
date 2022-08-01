@@ -1,4 +1,4 @@
-const url = "http://localhost:5500"
+const url = "http://localhost:3000"
 
 document.getElementById("loginButton").addEventListener('click', loginFunc)
 
@@ -7,13 +7,13 @@ async function loginFunc(){
     console.log("hello");
 
     //receiving user inputs for logging in
-    let user_username = document.getElementById("username").value;
-    let user_password = document.getElementById("password").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
     //sending login cred as json
     let user = {
-        username:user_username,
-        password:user_password,
+        user_username:username,
+        user_password:password,
     }
 
     console.log(user);
@@ -28,14 +28,14 @@ async function loginFunc(){
 
     console.log(response.status);
 
-   if(response.status === 200){
+   if(response.status === 202){
 
     document.getElementById("login-row").innerText="Welcome!";
 
-    if(user_role_id == 2){
-    location.replace("http://127.0.0.1:5500/ers.html")
-    } else {
+    if(username == 'FormerPresidentBillClinton'){
     location.replace("http://127.0.0.1:5500/ers_manager.html")
+    } else {
+    location.replace("http://127.0.0.1:5500/ers.html")
     }
 
 } else {
